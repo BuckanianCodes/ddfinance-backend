@@ -12,16 +12,21 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Add services to the container.
-builder.Services.AddDbContext<DDFinanceContext>(
-    options => {options.UseSqlServer(builder.Configuration.GetConnectionString("DDFinanceMainDb"),
-    sqlServerOptions => sqlServerOptions.EnableRetryOnFailure(
-        maxRetryCount:5,
-        maxRetryDelay:TimeSpan.FromSeconds(30),
-        errorNumbersToAdd: null)  
-               )
-                .EnableSensitiveDataLogging()
-                .LogTo(Console.WriteLine);
-});
+// builder.Services.AddDbContext<DDFinanceContext>(
+//     options => {options.UseSqlServer(builder.Configuration.GetConnectionString("DDFinanceMainDb"),
+//     sqlServerOptions => sqlServerOptions.EnableRetryOnFailure(
+//         maxRetryCount:5,
+//         maxRetryDelay:TimeSpan.FromSeconds(30),
+//         errorNumbersToAdd: null)  
+//                )
+//                 .EnableSensitiveDataLogging()
+//                 .LogTo(Console.WriteLine);
+// });
+
+builder.Services.AddDbContext<DDFinanceContext>(options => 
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DDFinancePostgresDb"))
+);
+
 builder.Services.AddAutoMapper(typeof(MappingProfiles));
 
 builder.Services.AddScoped<InsuranceInterface,InsuranceRepository>();
@@ -44,9 +49,10 @@ app.UseHttpsRedirection();
 
 app.UseCors(options => 
 {
-    options.AllowAnyHeader();
-    options.AllowAnyMethod();
-    options.AllowAnyOrigin();
+    options.WithOrigins("http://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+
 });
 
 app.UseRouting();

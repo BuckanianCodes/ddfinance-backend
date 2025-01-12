@@ -138,3 +138,5 @@ C:\Users\Hp\Desktop\DDFinance\backend\obj\Debug\net8.0\backend.genruntimeconfig.
 C:\Users\Hp\Desktop\DDFinance\backend\obj\Debug\net8.0\ref\backend.dll
 C:\Users\Hp\Desktop\DDFinance\backend\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\Hp\Desktop\DDFinance\backend\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Hp\Desktop\DDFinance\backend\bin\Debug\net8.0\Npgsql.dll
+C:\Users\Hp\Desktop\DDFinance\backend\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll

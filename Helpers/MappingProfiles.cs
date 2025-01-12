@@ -8,7 +8,7 @@ namespace backend.Helpers
 {
     public class MappingProfiles : Profile
     {
-        protected MappingProfiles()
+        public MappingProfiles()
         {
             CreateMap<InsuranceDto,Insurance>();
             CreateMap<Insurance,InsuranceDto>();

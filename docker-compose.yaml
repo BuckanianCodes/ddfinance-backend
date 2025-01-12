@@ -1,0 +1,14 @@
+version: '3.8'
+networks:
+  ddfinanceapp:
+services:
+  api:
+    container_name: ddfinance-api
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    networks:
+      - aniserverapp
