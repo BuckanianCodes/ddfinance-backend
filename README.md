@@ -1,10 +1,10 @@
 ## **DDFinance Backend**
 
-A backend API built with ASP.NET Core version 8.0 and consuming PostgresSQL as the database.
+A backend API built with ASP.NET Core version 8.0 and consuming PostgreSQL as the database.
 
 ## **Introduction**
 
-This is the backend API to the DDFinance frontend that allows interaction with the data from the Postgres databse
+This is the backend API to the DDFinance frontend that allows interaction with the data from the PostgreSQL database
 
 ## **Technologies and Tools**
 
@@ -13,7 +13,7 @@ C#
 .NET 8.0
 ASP .NET Core Web API
 Entity Framework Core
-SQL Server
+PostgreSQL
 Automapper
 Postman
 Swagger UI
