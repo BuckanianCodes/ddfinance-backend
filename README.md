@@ -43,5 +43,7 @@ dotnet ef database update
 dotnet ef database update
 ![image](https://github.com/user-attachments/assets/b76d9d4b-5256-42c0-b4e9-e4c18a48b528)
 
+## **Test the live URL**
+**`https://ddfinance.onrender.com/api/Insurance`**
 
 
