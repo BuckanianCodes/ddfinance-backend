@@ -6,7 +6,7 @@ namespace backend.Interfaces
     public interface InsuranceInterface
     {
         Task<bool> AddInsuranceAsync(InsuranceDto insurance);
-        Task<IReadOnlyList<Insurance>>  ListInsurancesAsync(string search);
+        Task<IReadOnlyList<Insurance>>  ListInsurancesAsync(string search,bool ascending,bool descending);
         Task<bool> DeleteInsuranceAsync(int insuranceId);
 
         Task<bool> UpdateInsuranceAsync(int insuranceId,InsuranceDto insuranceDto);

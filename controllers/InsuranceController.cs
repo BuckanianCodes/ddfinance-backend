@@ -19,9 +19,9 @@ namespace backend.controllers
           _insuranceInterface = insuranceInterface ;
         }
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<Insurance>>> GetInsurances([FromQuery] string search = "")
+        public async Task<ActionResult<IReadOnlyList<Insurance>>> GetInsurances([FromQuery]bool ascending = false,bool descending = false, string search = "")
         {
-          var insurances = await _insuranceInterface.ListInsurancesAsync(search);
+          var insurances = await _insuranceInterface.ListInsurancesAsync(search,ascending,descending);
           return Ok(insurances);
         }
         [HttpDelete("{insuranceId}")]

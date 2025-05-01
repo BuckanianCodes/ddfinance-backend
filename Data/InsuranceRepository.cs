@@ -53,13 +53,19 @@ namespace backend.Data
             }
         }
 
-        public async Task<IReadOnlyList<Insurance>> ListInsurancesAsync(string search)
+        public async Task<IReadOnlyList<Insurance>> ListInsurancesAsync(string search,bool ascending,bool descending)
         {
            var query = _context.Insurances.AsQueryable();
 
             if (!string.IsNullOrEmpty(search))
              {
                  query = query.Where(i => i.InsuranceName.ToLower().Contains(search.ToLower()));
+             }
+             if(ascending){
+                query = query.OrderBy(i => i.InsuranceName);
+             }
+             if(descending){
+                query = query.OrderByDescending(i => i.InsuranceName);
              }
 
              return await query.ToListAsync();
